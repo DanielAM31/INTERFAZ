@@ -9,16 +9,19 @@ public class Interfaz extends JFrame implements ActionListener {
 	JButton boton3;
 	JButton boton4;
 	JPanel panel;
+	ImageIcon iconobtn;
+	
 	
 	public Interfaz() {
 		
 		/*Creación del Boton1 con caracteristicas*/
 		
 		//setLayout(null);
-		boton1 = new JButton("Aceptar");
-		boton2 = new JButton("Cancelar");
-		boton3 = new JButton("Continuar");
-		boton4 = new JButton("Salir");
+		iconobtn = new ImageIcon("src/img/phone.png");
+		boton1 = new JButton(iconobtn);
+		boton2 = new JButton(iconobtn);
+		boton3 = new JButton(iconobtn);
+		boton4 = new JButton(iconobtn);
 		
 		//boton1.setBounds(300, 250, 100, 30);
 		//add(boton1);
@@ -41,20 +44,22 @@ public class Interfaz extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent c) {
+		
+		iconobtn = new ImageIcon("src/img/gold.png");
 		if(c.getSource() == boton1) {
-			System.exit(0);
+			boton1.setIcon(iconobtn);
 		}
 		
 		if(c.getSource() == boton2) {
-			boton2.setText("Cambio");
+			boton2.setIcon(iconobtn);
 		}
 		
 		if(c.getSource() == boton3) {
-			System.exit(0);
+			boton3.setIcon(iconobtn);
 		}
 		
 		if(c.getSource() == boton4) {
-			System.exit(0);
+			boton4.setIcon(iconobtn);
 		}
 	}
 }
