@@ -13,6 +13,7 @@ public class Interfaz extends JFrame implements ActionListener {
 	String Iconurl2 = "src/img/gold.png";
 	ImageIcon iconobtn1 = new ImageIcon(Iconurl1);
 	ImageIcon iconobtn2 = new ImageIcon(Iconurl2);
+	Icon icon1 = new JButton(this.iconobtn1).getIcon();
 	
 	public Interfaz(int fila) {
 		
@@ -38,7 +39,16 @@ public class Interfaz extends JFrame implements ActionListener {
 		
 		for(int i=0; i < this.cantidadbotones; i++) {
 			if(c.getSource() == this.matrizbotones[i]) {
-				this.matrizbotones[i].setIcon(this.iconobtn2);
+				Icon cadena = this.matrizbotones[i].getIcon();
+				
+				if(cadena == icon1) {
+					
+					this.matrizbotones[i].setIcon(this.iconobtn2);
+				}
+				else{
+				
+					this.matrizbotones[i].setIcon(this.iconobtn1);
+				}
 				try{Thread.sleep(100);}catch(InterruptedException ie){}
 			}
 		}
